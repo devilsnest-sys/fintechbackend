@@ -1,0 +1,6 @@
+@TscLoanManagement_HostAddress = http://localhost:5029
+
+GET {{TscLoanManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
