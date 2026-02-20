@@ -61,6 +61,18 @@ namespace TscLoanManagement.TSCDB.Application.Features.Masters
             return _mapper.Map<IEnumerable<PurchaseSourceDocumentDto>>(resultList);
         }
 
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity == null)
+            {
+                return false;
+            }
+
+            await _repository.DeleteAsync(entity);
+            return true;
+        }
+
     }
 
 }

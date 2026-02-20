@@ -6,5 +6,6 @@ namespace TscLoanManagement.TSCDB.Application.Interfaces
     {
         Task<IEnumerable<PurchaseSourceDocumentDto>> GetByPurchaseSourceIdAsync(int sourceId);
         Task<IEnumerable<PurchaseSourceDocumentDto>> CreateManyAsync(PurchaseSourceDocumentCreateManyDto dto);
+        Task<bool> DeleteAsync(int id);
     }
 }

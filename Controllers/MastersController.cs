@@ -154,7 +154,7 @@ namespace TscLoanManagement.Controllers
 
         [HttpDelete("purchase-source-documents/{id}")]
         public async Task<IActionResult> Delete(int id) =>
-            Ok(await _purchaseSourceService.DeleteAsync(id));
+            Ok(await _purchaseSourceDocumentService.DeleteAsync(id));
 
         [HttpGet("makes")] public async Task<IActionResult> GetMakes() => Ok(await _makeService.GetAllAsync());
         [HttpGet("makes/{id}")] public async Task<IActionResult> GetMake(int id) => Ok(await _makeService.GetByIdAsync(id));
