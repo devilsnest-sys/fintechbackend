@@ -73,6 +73,8 @@ builder.Services.AddAuthentication(options =>
 // Add AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+// SOLID (DIP): Controllers/services depend on interfaces, and DI resolves concrete implementations.
+// OOP (Polymorphism): Any compatible implementation can replace these mappings without changing callers.
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDealerRepository, DealerRepository>();

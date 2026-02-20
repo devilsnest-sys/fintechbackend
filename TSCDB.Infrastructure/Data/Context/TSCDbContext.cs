@@ -12,6 +12,9 @@ using static TscLoanManagement.TSCDB.Core.Domain.Location;
 
 namespace TscLoanManagement.TSCDB.Infrastructure.Data.Context
 {
+    // OOP (Encapsulation): centralizes DB schema mapping and relationship rules.
+    // SOLID (SRP): this class only handles EF Core persistence configuration.
+    // Depends on: Core domain entities and EF Core runtime.
     public class TSCDbContext : DbContext
     {
         public TSCDbContext(DbContextOptions<TSCDbContext> options) : base(options)

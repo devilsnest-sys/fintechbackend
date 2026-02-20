@@ -6,6 +6,10 @@ using TscLoanManagement.TSCDB.Infrastructure.Data.Context;
 
 namespace TscLoanManagement.TSCDB.Infrastructure.Repositories
 {
+    // SOLID (SRP): Handles generic EF CRUD concerns only.
+    // SOLID (LSP/OCP): Specific repositories can inherit/extend behavior without breaking callers.
+    // OOP (Inheritance base class): Reused by UserRepository, LoanRepository, RoleRepository, etc.
+    // Depends on: TSCDB.Infrastructure.Data.Context.TSCDbContext.
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly TSCDbContext _context;

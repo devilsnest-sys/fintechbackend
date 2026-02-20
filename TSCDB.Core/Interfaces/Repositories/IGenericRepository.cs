@@ -4,6 +4,9 @@ using TscLoanManagement.TSCDB.Core.Domain.DDR;
 
 namespace TscLoanManagement.TSCDB.Core.Interfaces.Repositories
 {
+    // OOP (Abstraction + Generic Polymorphism): common repository contract for any entity type T.
+    // SOLID (OCP): new entities can reuse this contract without changing existing consumers.
+    // Implemented by: TSCDB.Infrastructure.Repositories.GenericRepository<T>.
     public interface IGenericRepository<T> where T : class
     {
         Task<T> GetByIdAsync(int id);

@@ -12,6 +12,16 @@ using TscLoanManagement.TSCDB.Infrastructure.Repositories;
 
 namespace TscLoanManagement.TSCDB.Application.Features.Authentication
 {
+    // SOLID (SRP): Centralizes authentication/authorization use-cases for users.
+    // SOLID (DIP): Depends on repository/service abstractions (IUserRepository, IJwtService, etc.).
+    // OOP (Composition): Business behavior is composed from injected collaborators.
+    // Depends on:
+    // - TSCDB.Core.Interfaces.Repositories/IUserRepository.cs
+    // - TSCDB.Core.Interfaces.Repositories/IDealerRepository.cs
+    // - TSCDB.Application/Interfaces/IJwtService.cs
+    // - TSCDB.Application/Interfaces/IDealerService.cs
+    // - TSCDB.Application/Interfaces/IEmailService.cs
+    // - TSCDB.Infrastructure/Data/Context/TSCDbContext.cs
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;

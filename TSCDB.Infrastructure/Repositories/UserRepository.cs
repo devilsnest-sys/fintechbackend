@@ -5,6 +5,10 @@ using TscLoanManagement.TSCDB.Infrastructure.Data.Context;
 
 namespace TscLoanManagement.TSCDB.Infrastructure.Repositories
 {
+    // OOP (Inheritance): Specializes GenericRepository<User>.
+    // SOLID (LSP): Can be substituted wherever IUserRepository is requested.
+    // SOLID (SRP): Contains only user-specific query logic on top of generic persistence.
+    // Depends on: TSCDB.Infrastructure.Data.Context.TSCDbContext.
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
         public UserRepository(TSCDbContext context) : base(context)

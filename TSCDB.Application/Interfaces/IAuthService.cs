@@ -2,6 +2,9 @@
 
 namespace TscLoanManagement.TSCDB.Application.Interfaces
 {
+    // OOP (Abstraction): Defines the authentication contract independent of implementation details.
+    // SOLID (ISP): Consumers depend only on auth-specific operations.
+    // Implemented by: TSCDB.Application.Features.Authentication.AuthService.
     public interface IAuthService
     {
         Task<UserDto> LoginAsync(LoginRequestDto request);

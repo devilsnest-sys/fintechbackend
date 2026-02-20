@@ -7,6 +7,9 @@ using TscLoanManagement.TSCDB.Infrastructure.Data.Context;
 
 namespace TscLoanManagement.TSCDB.Infrastructure.Repositories
 {
+    // SOLID (SRP): Dealer-specific data access and aggregate loading.
+    // SOLID (DIP): Consumed through IDealerRepository abstraction.
+    // Depends on: TSCDB.Infrastructure.Data.Context.TSCDbContext and Dealer domain model.
     public class DealerRepository : IDealerRepository
     {
         private readonly TSCDbContext _context;

@@ -5,6 +5,9 @@ using TscLoanManagement.TSCDB.Application.Interfaces;
 
 namespace TscLoanManagement.Controllers
 {
+    // SOLID (SRP): Controller is limited to HTTP orchestration (routing, status codes, request/response).
+    // SOLID (DIP): Depends on IAuthService abstraction, not AuthService concrete class.
+    // Depends on: TSCDB.Application.Interfaces/IAuthService.cs and auth DTOs.
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase

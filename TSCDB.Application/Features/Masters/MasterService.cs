@@ -6,6 +6,12 @@ using TscLoanManagement.TSCDB.Core.Interfaces.Repositories;
 
 namespace TscLoanManagement.TSCDB.Application.Features.Masters
 {
+    // SOLID (SRP): encapsulates master CRUD use-cases independent of HTTP/persistence details.
+    // SOLID (DIP): depends on IGenericRepository<T> and IMapper abstractions.
+    // SOLID (OCP): generic design allows adding new master entities without changing service code.
+    // Depends on:
+    // - TSCDB.Core.Interfaces.Repositories/IGenericRepository.cs
+    // - TSCDB.Application/Mappings/MappingProfile.cs
     public class MasterService<T> : IMasterService<T> where T : class, IMasterEntity
     {
         private readonly IGenericRepository<T> _repository;

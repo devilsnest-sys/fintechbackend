@@ -13,6 +13,9 @@ using TscLoanManagement.TSCDB.Core.Domain.LoanDocuments;
 
 namespace TscLoanManagement.TSCDB.Application.Mappings
 {
+    // SOLID (SRP): keeps object-object mapping concerns in one place.
+    // OOP (Abstraction): decouples domain models from API DTO shapes.
+    // Depends on: DTO definitions and Core domain entities.
     public class MappingProfile : Profile
     {
         public MappingProfile()
